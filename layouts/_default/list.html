@@ -1,26 +1,29 @@
 {{ define "main" }}
     <section class="w-full lg:w-3/4 xl:w-3/4">
+
+    <!--Card-->
         <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
-            
             <p class="text-gray-900 font-bold text-3xl pb-2">{{.Data.Term}}</p>
 
             {{ range (where .Data.Pages "Type" "in" site.Params.mainSections).GroupByDate "2006" -}}
-            <p class="text-gray-900 font-bold text-2xl">{{ .Key }}</p>
-            {{ range .Pages }}
-                <div class="p-1 flex flex-row">
-                    <div class="text-gray-600 pl-10 pr-20" title="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</div>
-                    <div class="">
-                        <p class="text-xl">
-                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                        </p>
-                        <p class="text-gray-600 text-sm">
-                            {{ range .Params.tags }}
-                                <a class="pr-2 hover:text-gray-800" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">#{{ . }}</a>
-                            {{ end }}
-                        </p>
+            <p class="text-gray-900 font-bold text-2xl hidden xl:inline-block ">{{ .Key }}</p>
+                {{ range .Pages }}
+                    <div class="p-1 flex flex-row ">
+                        <div class="text-gray-600 pr-10 py-2 hidden xl:inline-block" title="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</div>
+                        <div class="w-full border-b border-dotted border-gray-500 py-3">
+                            <p class="text-xl">
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </p>
+                            <p class="text-gray-600 text-sm  xl:hidden">{{ .Date.Format "2006-01-02 15:04:05 MST" }}</p>
+                            <p class="text-gray-600 text-sm">
+                                {{ range .Params.tags }}
+                                    <a class="pr-2 hover:text-gray-800" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">#{{ . }}</a>
+                                {{ end }}
+                            </p>
+                        </div>
                     </div>
-                </div>
-            {{ end }}
+
+                {{ end }}
             {{ end }}
         </div>
     </section>

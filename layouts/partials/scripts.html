@@ -1,7 +1,16 @@
 <script>
-  document.getElementById("btn-donate").onclick = function() {
-    document.getElementById("donate-image").classList.remove("hidden");
-    document.getElementById("btn-donate").classList.add("hidden");
+  window.onload = function() {
+    document.getElementById("nav-toggle").onclick = function() {
+      document.getElementById("nav-content").classList.toggle("hidden");
+    };
+
+    var donate = document.getElementById("btn-donate");
+    if (donate) {
+      donate.onclick = function() {
+        document.getElementById("donate-image").classList.remove("hidden");
+        donate.classList.add("hidden");
+      };
+    }
   };
 
   /* Progress bar */
