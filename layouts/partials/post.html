@@ -1,0 +1,65 @@
+<!--Section container-->
+<section class="w-full lg:w-3/4 xl:w-3/4">
+
+
+    <!--Card-->
+    <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+
+        <!--Title-->
+        {{ partial "posts/title.html" . }}
+
+        <div class="md:hidden">
+            {{ partial "posts/toc.html" . }}
+        </div> 
+
+        <div class="post-content">
+            {{ .Content }}
+
+            {{ partial "posts/copyright.html" . }}
+        </div>
+
+        <!--Tags -->
+        {{ with .Params.tags -}}
+            <div class="text-base md:text-sm text-gray-500 pt-6">
+                {{ range . -}}
+                <a class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 hover:bg-gray-300"
+                    href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">
+                    #{{ . }}
+                </a>
+                {{ end }}                    
+            </div>
+        {{ end }}
+
+    </div>
+    <!--/Card-->
+
+    <!--divider-->
+    <hr class="bg-gray-300 my-10">
+
+
+    {{ if in (slice "post" "posts") .Type }}
+        {{ if .Site.Params.postAds }}
+        <div class="post-ads">{{ .Site.Params.postAds | safeHTML }}</div>
+        {{ end }}
+        <!-- split -->
+        {{ if .Site.DisqusShortname }}
+        <div class="">
+            {{ partial "posts/comments.html" . }}
+        </div>
+        {{ end }}
+
+        {{ partial "posts/related.html" . }}
+
+    {{ end }}
+
+</section>
+<!--/Section container-->
+
+<div class="hidden md:block lg:w-1/4 xl:w-1/4 px-6 text-gray-800">
+
+    {{ partial "posts/profile.html" . }}
+
+    <div class="bg-white shadow rounded p-4 mt-5">
+        {{ partial "posts/toc.html" . }}
+    </div>
+</div>

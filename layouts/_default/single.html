@@ -1,0 +1,3 @@
+{{ define "main" }}
+    {{- if eq .Params.type "about" -}} {{ partial "about.html" . }} {{ else -}} {{ partial "post.html" . }} {{ end -}}
+{{ end }}

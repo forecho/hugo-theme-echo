@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+<html lang="{{ $.Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+
+<body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
+
+    {{ partial "header.html" . }}
+
+    <div id="container" class="container w-full flex flex-wrap mx-auto px-2 lg:pt-10 mt-10">
+
+    {{- block "main" . }}{{- end }}
+
+    </div>
+    
+    {{ partial "footer.html" . }} {{ partial "scripts.html" . }}
+</body>
+
 </html>

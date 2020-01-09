@@ -1,0 +1,32 @@
+{{ define "main" }}
+    <section class="w-full lg:w-3/4 xl:w-3/4">
+        <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+            
+            {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "post" "posts")) }}
+                {{ range $index,$data := $paginator.Pages }}
+                <article >
+                    <!--Title-->
+                    {{ partial "posts/title.html" . }}
+                    
+                    <div class="post-content">
+                        {{ .Summary }}
+                    </div>
+                    <p class="text-sm font-semibold pt-5 text-gray-700 ">
+                        <a href="{{ .Permalink }}" class="px-5 py-2 inline-block bg-gray-200 rounded  hover:bg-gray-300">阅读全文</a>
+                    </p>
+                </article>
+
+                <hr class="bg-gray-300 my-10">
+            {{ end }}
+            <p class="text-center">
+                <a href="#" class="md:text-xl text-gray-700 text-center">回到顶部</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="hidden md:block w-full lg:w-1/4 xl:w-1/4 px-6 text-gray-800 leading-normal">
+
+        {{ partial "posts/profile.html" . }}
+
+    </div>
+{{ end }}

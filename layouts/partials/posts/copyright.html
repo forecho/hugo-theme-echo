@@ -1,0 +1,22 @@
+{{ if and (isset .Site.Params "cc")  (in (slice "post" "posts") .Type) }}
+<hr class="bg-gray-300 my-8">
+<div class="border-l-4 border-red-400 mx-auto bg-gray-200 mt-2">
+    <div class="pt-2 copyright">
+        <ul class="list-none">
+            <li>
+                <strong>原文作者：</strong>
+                <a rel="author" href="{{ .Site.BaseURL}}">{{ if isset .Site.Author "name" }}{{.Site.Author.name}}{{ else }}{{.Site.Title}}{{ end }}</a>
+            </li>
+            <li style="word-break:break-all">
+                <strong>原文链接：</strong>
+                <a href="{{ .Permalink}}">{{ .Permalink}}</a>
+            </li>
+            <li>
+                <strong>版权声明：</strong>本作品采用
+                <a rel="license" href="{{.Site.Params.cc.link}}">{{.Site.Params.cc.name}}</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。
+            </li>
+        </ul>
+    </div>
+ 
+</div>
+{{ end }}

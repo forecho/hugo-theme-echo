@@ -1,0 +1,76 @@
+<head>
+    <meta charset="utf-8" />
+    {{ hugo.Generator }}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Saber v0.11.2">
+
+    {{ if .Site.Author.name }}
+    <meta name="author" content="{{ .Site.Author.name }}" />
+    {{end}}
+
+    <meta name="og:site_name" content="{{ .Site.Title }}" />
+
+    {{- if .IsHome -}}
+
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:type" content="website" />
+    <meta name="description" content="{{ .Site.Params.description }}" />
+    <meta property="title" content="{{ .Site.Title }}">
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="twitter:title" content="{{ .Site.Title }}">
+    <meta property="description" content="{{ .Site.Params.description }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="twitter:description" content="{{ .Site.Params.description }}">
+    <meta property="og:type" content="website">
+    <title>{{ .Site.Title }}</title>
+
+    {{- else -}}
+
+    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="{{ default .Summary .Description }}" />
+    <meta property="title" content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="description" content="{{ default .Summary .Description }}">
+    <meta property="og:description" content="{{ default .Summary .Description }}">
+    <meta property="twitter:description" content="{{ default .Summary .Description }}">
+    <meta property="og:type" content="article">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+
+    {{- end }}
+
+    <meta property="og:url" content="{{ .Permalink }}" />
+
+    {{ if .Site.Author.avatar }}
+    <meta property="og:image" content="{{ .Site.Author.avatar }}">
+    <meta property="twitter:image" content="{{ .Site.Author.avatar }}">
+    {{end}}
+
+    {{- if .Site.Params.favicon -}}
+    <link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/x-png" />
+    {{- end -}}
+
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    {{ if not .IsHome -}}
+    {{- end }}
+    <link rel="stylesheet" href="{{ .Site.Params.staticPrefix }}{{ "/css/main.css" | relURL }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" />
+    <link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    <!-- quicklink require -->
+    <!-- <script>
+      /* Disable minification (remove `.min` from URL path) for more info
+      https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver
+      */
+      (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+    </script> -->
+
+
+    {{ .Site.Params.extraHead | safeHTML }}
+</head>

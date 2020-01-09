@@ -1,0 +1,141 @@
+<div class="lg:w-full mx-auto flex flex-wrap items-center justify-between">
+    <div class="bg-white shadow rounded overflow-hidden">
+        <div class="bg-cover bg-auto mx-auto w-32 h-32 mt-5 rounded-full" style="background-image: url('{{ .Site.Author.avatar }}')"> </div>
+        
+        <div class="p-4">
+            <p class="text-2xl text-center text-gray-900 pb-2">{{ .Site.Author.name }}</p>
+            <p class="text-sm text-gray-700">{{ .Site.Author.bio }}</p>
+        </div>
+        <div class="flex p-4 border-t border-gray-300 text-gray-700">
+            <div class="flex-1 border-r border-gray-600">
+                <p class="text-center">
+                    <span class="text-gray-700 font-bold">
+                        {{ len (where .Site.RegularPages "Type" "posts") }}
+                    </span>
+                    文章
+                </p>
+            </div>
+            <div class="flex-1 text-center">
+                <p class="text-center">
+                    <span class="text-gray-700 font-bold">
+                        {{ if isset .Site.Taxonomies "tags" }}
+                            {{ len .Site.Taxonomies.tags }}
+                        {{ else }}
+                            0
+                        {{ end }}
+                    </span>
+                    标签
+                </p>
+            </div>
+        </div>
+        <div class="px-4 pb-4 border-t border-gray-300">
+            <div class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between text-gray-500">
+                {{ with .Site.Social.github }}
+                <a href="//github.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.gitlab }}
+                <a href="//gitlab.com/u/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="GitLab"><i class="fa fa-gitlab"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.bitbucket }}
+                <a href="//bitbucket.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Bitbucket"><i class="fa fa-bitbucket"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.jsfiddle }}
+                <a href="//jsfiddle.net/user/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="JSFiddle"><i class="fa fa-jsfiddle"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.codepen }}
+                <a href="//codepen.io/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="CodePen"><i class="fa fa-codepen"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.foursquare }}
+                <a href="//foursquare.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Foursquare"><i class="fa fa-foursquare"></i></a>
+                {{ end  }}
+
+                {{ with .Site.Social.dribbble }}
+                <a href="//dribbble.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Dribbble"><i class="fa fa-dribbble"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.deviantart }}
+                <a href="//{{.}}.deviantart.com/" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="DeviantArt"><i class="fa fa-deviantart"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.behance }}
+                <a href="//behance.net/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Behance"><i class="fa fa-behance"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.flickr }}
+                <a href="//flickr.com/photos/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Flickr"><i class="fa fa-flickr"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.instagram }}
+                <a href="//instagram.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.youtube }}
+                <a href="//youtube.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.vimeo }}
+                <a href="//vimeo.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Vimeo"><i class="fa fa-vimeo"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.vine }}
+                <a href="//vine.co/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Vine"><i class="fa fa-vine"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.medium}}
+                <a href="//medium.com/@{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Medium"><i class="fa fa-medium"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.wordpress }}
+                <a href="//{{.}}.wordpress.com" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="WordPress"><i class="fa fa-wordpress"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.tumblr }}
+                <a href="//{{.}}.tumblr.com" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Tumblr"><i class="fa fa-tumblr"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.xing }}
+                <a href="//xing.com/profile/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Xing"><i class="fa fa-xing"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.linkedin }}
+                <a href="//linkedin.com/in/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.slideshare }}
+                <a href="//slideshare.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="SlideShare"><i class="fa fa-slideshare"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.stackoverflow }}
+                <a href="//stackoverflow.com/users/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Stack Overflow"><i class="fa fa-stack-overflow"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.reddit }}
+                <a href="//reddit.com/user/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Reddit"><i class="fa fa-reddit"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.pinterest }}
+                <a href="//pinterest.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.googleplus }}
+                <a href="//plus.google.com/+{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Google+"><i class="fa fa-google-plus"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.facebook }}
+                <a href="//facebook.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+                {{ end }}
+
+                {{ with .Site.Social.twitter }}
+                <a href="//twitter.com/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
