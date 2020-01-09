@@ -1,8 +1,4 @@
 <!-- Pin to top right corner -->
-<div class="absolute top-10 right-0 h-12 w-18 p-4">
-    <button class="js-change-theme focus:outline-none">🌙</button>
-</div>
-
 <footer class="bg-white border-t border-gray-400 shadow mt-10">	
     <div class="container  mx-auto flex py-8">
         <div class="w-full text-center text-gray-600 ">
@@ -14,6 +10,13 @@
                 Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io/"  class="text-gray-700" target="_blank">Hugo</a> 
                 Theme based on <a href="https://github.com/forecho/hugo-theme-echo" class="text-gray-700" target="_blank">Echo</a>
             </p>
+
+            {{ if .Site.Params.busuanzi -}}
+            <span id="busuanzi_container">
+              访客数：<span id="busuanzi_value_site_uv"></span> | 访问量 <span id="busuanzi_value_site_pv"></span>
+            </span>
+            {{- end }}
+
         </div>
 
     </div>

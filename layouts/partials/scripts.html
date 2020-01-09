@@ -1,51 +1,33 @@
 <script>
-    //Toggle mode
-    const toggle = document.querySelector('.js-change-theme');
-    const body = document.querySelector('body');
-    //const profile = document.getElementById('profile');
-    toggle.addEventListener('click', () => {
-        if (body.classList.contains('text-gray-700')) {
-            toggle.innerHTML = "☀️";
-            body.classList.remove('text-gray-700');
-            body.classList.add('text-gray-300');
-            body.classList.remove('bg-gray-100');
-            body.classList.add('bg-gray-900');
-        } else {
-            toggle.innerHTML = "🌙";
-            body.classList.remove('text-gray-300');
-            body.classList.add('text-gray-700');
-            body.classList.remove('bg-gray-900');
-            body.classList.add('bg-gray-100');
-        }
-    });
+  document.getElementById("btn-donate").onclick = function() {
+    document.getElementById("donate-image").classList.remove("hidden");
+    document.getElementById("btn-donate").classList.add("hidden");
+  };
 
-    /* Progress bar */
-    //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
-    var h = document.documentElement,
-        b = document.body,
-        st = 'scrollTop',
-        sh = 'scrollHeight',
-        progress = document.querySelector('#progress'),
-        scroll;
-    var scrollpos = window.scrollY;
-    var header = document.getElementById("header");
-    var navcontent = document.getElementById("nav-content");
+  /* Progress bar */
+  //Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+  var h = document.documentElement,
+    b = document.body,
+    st = "scrollTop",
+    sh = "scrollHeight",
+    progress = document.querySelector("#progress"),
+    scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
 
-    document.addEventListener('scroll', function() {
+  document.addEventListener("scroll", function() {
+    /*Refresh scroll % width*/
+    scroll = ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
+    progress.style.setProperty("--scroll", scroll + "%");
 
-        /*Refresh scroll % width*/
-        scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-        progress.style.setProperty('--scroll', scroll + '%');
+    /*Apply classes for slide in bar*/
+    scrollpos = window.scrollY;
 
-        /*Apply classes for slide in bar*/
-        scrollpos = window.scrollY;
-
-        if (scrollpos > 10) {
-            navcontent.classList.remove("bg-gray-100");
-        } else {
-            navcontent.classList.add("bg-gray-100");
-
-        }
-
-    });
+    if (scrollpos > 10) {
+      navcontent.classList.remove("bg-gray-100");
+    } else {
+      navcontent.classList.add("bg-gray-100");
+    }
+  });
 </script>

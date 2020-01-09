@@ -1,7 +1,6 @@
 <!--Section container-->
 <section class="w-full lg:w-3/4 xl:w-3/4">
 
-
     <!--Card-->
     <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
 
@@ -15,7 +14,12 @@
         <div class="post-content">
             {{ .Content }}
 
+            <hr class="bg-gray-300 mt-8">
+
+            {{ partial "posts/reward.html" . }}
+
             {{ partial "posts/copyright.html" . }}
+
         </div>
 
         <!--Tags -->
@@ -36,7 +40,6 @@
     <!--divider-->
     <hr class="bg-gray-300 my-10">
 
-
     {{ if in (slice "post" "posts") .Type }}
         {{ if .Site.Params.postAds }}
         <div class="post-ads">{{ .Site.Params.postAds | safeHTML }}</div>
@@ -55,11 +58,14 @@
 </section>
 <!--/Section container-->
 
-<div class="hidden md:block lg:w-1/4 xl:w-1/4 px-6 text-gray-800">
+<div class="hidden xl:text-sm xl:block xl:w-1/4 xl:px-6 ">
 
     {{ partial "posts/profile.html" . }}
 
-    <div class="bg-white shadow rounded p-4 mt-5">
-        {{ partial "posts/toc.html" . }}
+    <div class="flex flex-col justify-between sticky top-0 pt-12 pb-4 -mt-10 text-gray-600">
+        <div class="bg-white shadow rounded p-4 mt-5">
+            {{ partial "posts/toc.html" . }}
+        </div>
     </div>
+   
 </div>

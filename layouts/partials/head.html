@@ -63,14 +63,11 @@
     <link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
-    <!-- quicklink require -->
-    <!-- <script>
-      /* Disable minification (remove `.min` from URL path) for more info
-      https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver
-      */
-      (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-    </script> -->
-
+    
+    <!-- busuanzi -->
+    {{- if .Site.Params.busuanzi -}}
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    {{- end -}}
 
     {{ .Site.Params.extraHead | safeHTML }}
 </head>
