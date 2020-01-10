@@ -117,6 +117,10 @@
                 {{ with .Site.Social.douban }}
                 <a href="//douban.com/people/{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="Douban"><i class="my-iconfont icon-social-douban"></i></a>
                 {{ end }}
+
+                {{ with .Site.Social.rss }}
+                <a href="{{.}}" class="hover:text-gray-900 p-1 text-2xl" target="_blank" title="RSS"><i class="my-iconfont icon-feed"></i></a>
+                {{ end }}
             </div>
         </div>
     </div>

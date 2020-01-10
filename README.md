@@ -187,6 +187,7 @@ weibo = "forecho"
 facebook = "forecho"
 twitter = "caizhenghai"
 douban = "ipzone"
+rss = "/atom.xml"
 ```
 
 启动 hugo server ：
