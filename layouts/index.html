@@ -1,6 +1,6 @@
 {{ define "main" }}
     <section class="w-full lg:w-3/4 xl:w-3/4">
-        <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+        <div class="px-8 py-6 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
             
             {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "post" "posts")) }}
                 {{ range $index,$data := $paginator.Pages }}
@@ -16,7 +16,7 @@
                     </p>
                 </article>
 
-                <hr class="bg-gray-300 my-10">
+                <hr class="bg-gray-300 mt-10 mb-6">
             {{ end }}
             <p class="text-center">
                 <a  class="md:text-xl text-gray-700" href="{{ "/posts" | relLangURL }}{{ if $.Site.Params.uglyURLs }}.html{{ else }}/{{ end }}">↑ 文章归档 ↑</a>

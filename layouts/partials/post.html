@@ -2,7 +2,7 @@
 <section class="w-full lg:w-3/4 xl:w-3/4">
 
     <!--Card-->
-    <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+    <div class="px-8 py-6 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
 
         <!--Title-->
         {{ partial "posts/title.html" . }}
@@ -36,7 +36,7 @@
 
          <!-- Counter busuanzi -->
         {{ if .Site.Params.busuanzi }}
-            <p class="text-gray-500 text-sm text-right">
+            <p class="text-gray-500 text-sm text-right pt-1">
                 <span id="busuanzi_container_page_pv">
                     本文有 <span id="busuanzi_value_page_pv"></span> 次阅读
                 </span>
