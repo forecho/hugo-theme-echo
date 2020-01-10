@@ -1,4 +1,4 @@
-{{ $related := (where site.RegularPages "Type" "in" site.Params.mainSections).Related . | first 4 }}
+{{ $related := (where site.RegularPages "Type" "in" (slice "post" "posts")).Related . | first 5 }}
 {{ with $related }}
 
 <div class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
