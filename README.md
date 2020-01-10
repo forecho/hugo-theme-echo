@@ -258,6 +258,13 @@ reward: false	 # 关闭打赏
 ---
 ```
 
+## 感谢
+
+本主题参考了以下主题的部分代码：
+
+- [hugo-theme-even](https://github.com/olOwOlo/hugo-theme-even)
+- [hugo-theme-jane](https://github.com/xianmin/hugo-theme-jane)
+
 ## License
 
 Hugo-theme-echo is licensed under the MIT license. Check the [LICENSE](LICENSE.md) file for details.
