@@ -27,13 +27,13 @@ Echo 是一个风格简洁的 Hugo 主题。
 
 
 
-### 1. 快速安装 Hugo
+### 快速安装 Hugo
 
 从 [Hugo Releases](https://github.com/gohugoio/hugo/releases) 上直接下载安装适合你的版本。
 
 
 
-### 2. 快速创建网站
+### 快速创建网站
 
 ```bash
 hugo new site myBlog
@@ -43,7 +43,7 @@ hugo new site myBlog
 
 
 
-### 3. 快速使用 Hugo-Theme-Jane
+### 快速使用 
 
 把这个主题克隆到 `themes` 文件夹
 
@@ -51,7 +51,6 @@ hugo new site myBlog
 cd myBlog
 git submodule add https://github.com/forecho/hugo-theme-echo.git --depth=1 themes/echo
 ```
-
 
 站点设置示例：
 
@@ -103,8 +102,8 @@ homepage = "https://forecho.io/"
 
 [params]
 favicon = "https://avatars0.githubusercontent.com/u/1725326?s=460&v=4"
-keywords = "Hugo, theme, even"
-description = "Hugo theme even example site."
+keywords = "Hugo, theme, echo"
+description = "Hugo theme echo example site."
 toc = true
 navItems = [
   ["HOME", "/"],
@@ -193,7 +192,7 @@ douban = "ipzone"
 启动 hugo server ：
 
 ```bash
-hugo server
+hugo server -D
 ```
 
 打开 http://localhost:1313/ ，你将会看到一个示例网站。
@@ -204,7 +203,7 @@ hugo server
 
 默认配置文件 `config.toml` 位于你的网站的根目录，请按自身需要进行定制。
 
-默认的文章文件位于 `./content/post` 目录。
+默认的文章文件位于 `./content/posts` 目录。
 
 
 ### 5. 生成你的网站
