@@ -123,8 +123,6 @@ profileAds = '<div class="bg-white shadow"><img class=" object-cover w-auto mx-a
 
 # 开启版权声明，协议名字和链接都可以换
 [params.cc]
-postMetaInFooter = true # contain author, lastMod, markdown link, license           # 包含作者，上次修改时间，markdown链接，许可信息
-linkToMarkDown = false # Only effective when hugo will output .md files.           # 链接到markdown原始文件（仅当允许hugo生成markdown文件时有效）
 name = "署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)"
 link = "https://creativecommons.org/licenses/by-nc/4.0/deed.zh"
 
