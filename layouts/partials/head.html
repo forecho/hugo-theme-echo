@@ -6,18 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="Saber v0.11.2">
-
-    {{ if .Site.Author.name }}
-    <meta name="author" content="{{ .Site.Author.name }}" />
-    {{end}}
-
+    {{ if .Site.Author.name }}<meta name="author" content="{{ .Site.Author.name }}" />{{end}}
+    {{ if .Site.Params.keywords }}<meta name="keywords" content="{{ .Site.Params.keywords }}" />{{ end }}
     <meta name="og:site_name" content="{{ .Site.Title }}" />
 
     {{- if .IsHome -}}
 
     <meta property="og:title" content="{{ .Site.Title }}" />
     <meta property="og:type" content="website" />
-    <meta name="description" content="{{ .Site.Params.description }}" />
     <meta property="title" content="{{ .Site.Title }}">
     <meta property="og:title" content="{{ .Site.Title }}">
     <meta property="twitter:title" content="{{ .Site.Title }}">
@@ -31,7 +27,6 @@
 
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
     <meta property="og:type" content="article" />
-    <meta name="description" content="{{ default .Summary .Description }}" />
     <meta property="title" content="{{ .Title }} - {{ .Site.Title }}">
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
     <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
@@ -61,8 +56,6 @@
     <link rel="stylesheet" href="{{ .Site.Params.staticPrefix }}{{ "/css/main.css" | relURL }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" />
     <link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
     
     <!-- busuanzi -->
     {{- if .Site.Params.busuanzi -}}
