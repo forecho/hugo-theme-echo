@@ -1,6 +1,6 @@
 {{ if or .Params.reward (and .Site.Params.reward.enable (ne .Params.reward false)) -}}
 {{ $qrCode := .Site.Params.reward }}
-<div class="pt-8 pb-1">
+<div class="pt-4">
     <p class="text-center">
         <button id="btn-donate" class="px-5 py-2 inline-block rounded hover:bg-red-600 bg-red-400 text-white" for="reward">{{ $qrCode.title }}</button>
     </p>
