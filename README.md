@@ -200,29 +200,18 @@ hugo server -D
 
 
 
-### 4. 开始你的博客
+### 开始你的博客
 
 默认配置文件 `config.toml` 位于你的网站的根目录，请按自身需要进行定制。
 
 默认的文章文件位于 `./content/posts` 目录。
 
 
-### 5. 生成你的网站
+### 生成你的网站
 
 直接运行 `hugo` ，将会自动生成你的网站到 `public/` 目录。
 
 如果你有额外的时间，并且想更多的了解 [Hugo][] ，请查阅官方文档 [Hugo Official Docs][] 。
-
-
-
-## 站点设置
-
-不妨看一看 [exampleSite](https://github.com/xianmin/hugo-theme-jane/tree/master/exampleSite) 文件夹中的文件。
-
-这个目录包含一个示例 `config.toml` 文件和一些示例文章。
-
-将 `config.toml` 复制到你的网站根目录。按自身需要进行修改。
-
 
 
 ## 单篇文章的设置

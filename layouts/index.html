@@ -19,7 +19,7 @@
                 <hr class="bg-gray-300 my-10">
             {{ end }}
             <p class="text-center">
-                <a href="#" class="md:text-xl text-gray-700 text-center">回到顶部</a>
+                <a  class="md:text-xl text-gray-700" href="{{ "/posts" | relLangURL }}{{ if $.Site.Params.uglyURLs }}.html{{ else }}/{{ end }}">↑ 文章归档 ↑</a>
             </p>
         </div>
     </section>

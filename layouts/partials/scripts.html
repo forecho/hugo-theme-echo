@@ -20,7 +20,7 @@
         .replace("http://", "")
         .replace("https://", "")
         .split(/[/?#]/)[0];
-      if (domain == url) {
+      if (domain !== url) {
         div.setAttribute("target", "_blank");
       }
     });

@@ -1,0 +1,30 @@
+{{ define "main" }}
+    <section class="w-full lg:w-3/4 xl:w-3/4">
+        <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+            <div class=" text-center pb-2">
+                <h1 class="error-emoji text-gray-800 text-6xl"></h1>
+                <p class="text-xl py-5 text-gray-600">/* 404 page not found. */</p>
+                <p class="text-red-400">
+                    <a href="{{ "/posts" | relLangURL }}{{ if $.Site.Params.uglyURLs }}.html{{ else }}/{{ end }}">↑ 文章归档 ↑</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="hidden md:block w-full lg:w-1/4 xl:w-1/4 px-6 text-gray-800 leading-normal">
+
+        {{ partial "posts/profile.html" . }}
+
+    </div>
+
+    <script>
+        var errorEmojiContainer = document.getElementsByClassName('error-emoji')[0];
+        var emojiArray = [
+          '\\(o_o)/', '(o^^)o', '(˚Δ˚)b', '(^-^*)', '(≥o≤)', '(^_^)b', '(·_·)',
+          '(=\'X\'=)', '(>_<)', '(;-;)', '\\(^Д^)/',
+        ];
+        var errorEmoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
+        errorEmojiContainer.appendChild(document.createTextNode(errorEmoji));
+    </script>
+   
+{{ end }}
