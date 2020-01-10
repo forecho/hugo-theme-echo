@@ -34,6 +34,15 @@
             </div>
         {{ end }}
 
+         <!-- Counter busuanzi -->
+        {{ if .Site.Params.busuanzi }}
+            <p class="text-gray-500 text-sm text-right">
+                <span id="busuanzi_container_page_pv">
+                    本文有 <span id="busuanzi_value_page_pv"></span> 次阅读
+                </span>
+            </p>
+        {{ end }}
+
     </div>
     <!--/Card-->
 

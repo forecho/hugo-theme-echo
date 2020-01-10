@@ -110,7 +110,7 @@ navItems = [
   ["HOME", "/"],
   ["ARCHIVE", "/posts.html"],
   ["ABOUT", "/about.html"],
-  ["RSS", "/auto.xml"]
+  ["RSS", "/atom.xml"]
 ]
 # rss 全文输出
 rssFullContent = true
@@ -167,13 +167,9 @@ visitor = false
 ## 社交链接
 [social]
 github = "forecho"
-gitlab = "forecho"
-bitbucket = "forecho"
 jsfiddle = "forecho"
 codepen = "forecho"
-foursquare = "forecho"
 dribbble = "forecho"
-deviantart = "forecho"
 behance = "forecho"
 flickr = "forecho"
 instagram = "forecho"
@@ -183,17 +179,15 @@ vine = "forecho"
 medium = "forecho"
 wordpress = "forecho"
 tumblr = "forecho"
-xing = "forecho"
 linkedin = "forecho"
 slideshare = "forecho"
 stackoverflow = "forecho"
 reddit = "forecho"
 pinterest = "forecho"
-googleplus = "forecho"
+weibo = "forecho"
 facebook = "forecho"
-facebook_admin = "forecho"
-twitter_domain = "forecho"
 twitter = "caizhenghai"
+douban = "ipzone"
 ```
 
 启动 hugo server ：

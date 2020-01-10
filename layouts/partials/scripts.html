@@ -11,6 +11,19 @@
         donate.classList.add("hidden");
       };
     }
+
+    var hostname = window.location.hostname;
+    var divs = document.querySelectorAll('a[href^="http"]');
+    [].forEach.call(divs, function(div) {
+      url = div.getAttribute("href");
+      var domain = url
+        .replace("http://", "")
+        .replace("https://", "")
+        .split(/[/?#]/)[0];
+      if (domain == url) {
+        div.setAttribute("target", "_blank");
+      }
+    });
   };
 
   /* Progress bar */

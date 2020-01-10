@@ -45,7 +45,7 @@
 .post-content p code,
 .post-content li code {
   background-color: #f0f3f3;
-  padding: 0.25em 0.4em;
+  padding: 0.2em 0.4em;
   border-radius: 3px;
   color: #805ad5;
 }
@@ -128,4 +128,11 @@ a:focus {
 #TableOfContents a:hover {
   color: #1a202c !important;
   transform: translateX(2px) !important;
+}
+
+.my-iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
