@@ -21,7 +21,7 @@
                             <p class="text-gray-600 text-sm  xl:hidden">{{ .Date.Format "2006-01-02 15:04:05 MST" }}</p>
                             <p class="text-gray-600 text-sm">
                                 {{ range .Params.tags }}
-                                    <a class="pr-2 hover:text-gray-800" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">#{{ . }}</a>
+                                    <a class="pr-2 hover:text-gray-800" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">#{{ . }}</a>
                                 {{ end }}
                             </p>
                         </div>
