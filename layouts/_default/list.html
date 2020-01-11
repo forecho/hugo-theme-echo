@@ -9,7 +9,7 @@
                 <p class="text-gray-900 font-bold text-3xl pb-2">文章归档</p>
             {{ end }}
 
-            {{ range (where .Data.Pages "Type" "in" site.Params.mainSections).GroupByDate "2006" -}}
+            {{ range (where .Data.Pages "Type" "in" (slice "post" "posts")).GroupByDate "2006" -}}
             <p class="text-gray-900 font-bold text-2xl hidden xl:inline-block  pt-2">{{ .Key }}</p>
                 {{ range .Pages }}
                     <div class="p-1 flex flex-row border-b border-dotted border-gray-400">

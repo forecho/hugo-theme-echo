@@ -10,7 +10,7 @@
             <div class="flex-1 border-r border-gray-600">
                 <p class="text-center">
                     <span class="text-gray-700 font-bold">
-                        {{ len (where .Site.RegularPages "Type" "posts") }}
+                        {{ len (where site.RegularPages "Type" "in" (slice "post" "posts")) }}
                     </span>
                     文章
                 </p>
