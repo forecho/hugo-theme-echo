@@ -4,13 +4,13 @@
         
         <div class="p-4">
             <p class="text-2xl text-center text-gray-900 pb-2">{{ .Site.Author.name }}</p>
-            <p class="text-sm text-gray-700">{{ .Site.Author.bio }}</p>
+            <p class="text-sm text-center text-gray-700">{{ .Site.Author.bio }}</p>
         </div>
         <div class="flex p-4 border-t text-sm border-gray-300 text-gray-700">
             <div class="flex-1 border-r border-gray-600">
                 <p class="text-center">
                     <span class="text-gray-700 font-bold">
-                        {{ len (where site.RegularPages "Type" "in" (slice "post" "posts")) }}
+                        {{ len (where .Site.RegularPages "Type" "in" (slice "post" "posts")) }}
                     </span>
                     文章
                 </p>
