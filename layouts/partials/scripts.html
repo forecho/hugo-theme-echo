@@ -19,8 +19,8 @@
       var domain = url
         .replace("http://", "")
         .replace("https://", "")
-        .split(/[/?#]/)[0];
-      if (domain !== url) {
+        .split(/[/?#:]/)[0];
+      if (domain !== hostname) {
         div.setAttribute("target", "_blank");
       }
     });
