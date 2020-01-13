@@ -1,0 +1,10 @@
+
+{{ $related := (where site.RegularPages ".Params.tags" "intersect" (slice "popular") | first 5 ) }}
+{{ with $related }}
+<div class="p-4 mt-2 lg:mt-4 rounded shadow bg-white">
+    <h2 class="font-sans font-bold break-normal text-gray-700 px-2 pb-3 text-lg">热门文章</h2>
+    {{ range . }}
+    <li><a href="{{ .RelPermalink }}" class="underline text-orange-600 text-sm">{{ .Title }}</a></li>
+    {{ end }}
+</div>
+{{ end }}

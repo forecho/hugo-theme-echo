@@ -119,6 +119,7 @@ staticCDNPrefix = "https://cdn.bootcss.com/font-awesome/5.11.2"
 extraHead = '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>'
 postAds = ""
 profileAds = '<div class="bg-white shadow"><img class=" object-cover w-auto mx-auto mt-6" src="https://blog-1251237404.cos.ap-guangzhou.myqcloud.com/20190424153337.png" alt="微信打赏"></div>'
+notFoundAds = ''
 
 # 开启版权声明，协议名字和链接都可以换
 [params.cc]
@@ -227,7 +228,7 @@ title: "An Example Post"           # 标题
 date: 2018-01-01T16:01:23+08:00    # 创建时间
 lastmod: 2018-01-02T16:01:23+08:00 # 最后修改时间
 draft: false                       # 是否是草稿？
-tags: ["tag-1", "tag-2", "tag-3"]  # 标签
+tags: ["tag-1", "tag-2", "tag-3", "popular"]  # 标签
 categories: ["index"]              # 分类
 author: "forecho"                  # 作者
 
@@ -238,6 +239,10 @@ toc: false       # 关闭文章目录
 reward: false	 # 关闭打赏
 ---
 ```
+
+## 关于热门文章
+
+如果标签里面含有 `popular` 就会自动出现再热门文章列表中，目前热门文章只会在侧边栏和404页面展示，热门文章列表最多展示5篇文章。
 
 ## 感谢
 

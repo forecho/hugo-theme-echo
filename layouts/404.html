@@ -9,6 +9,12 @@
                 </p>
             </div>
         </div>
+
+        {{ if .Site.Params.notFoundAds }}
+            <div class="not-found-ads">{{ .Site.Params.notFoundAds | safeHTML }}</div>
+        {{ end }}
+
+        {{ partial "posts/popular.html" . }}
     </section>
 
     <div class="hidden md:block w-full lg:w-1/4 xl:w-1/4 px-6 text-gray-800 leading-normal">
