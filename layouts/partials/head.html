@@ -12,12 +12,11 @@
 
     {{- if .IsHome -}}
 
-    <meta property="og:title" content="{{ .Site.Title }}" />
     <meta property="og:type" content="website" />
     <meta property="title" content="{{ .Site.Title }}">
     <meta property="og:title" content="{{ .Site.Title }}">
     <meta property="twitter:title" content="{{ .Site.Title }}">
-    <meta property="description" content="{{ .Site.Params.description }}">
+    <meta name="description" content="{{ .Site.Params.description }}">
     <meta property="og:description" content="{{ .Site.Params.description }}">
     <meta property="twitter:description" content="{{ .Site.Params.description }}">
     <meta property="og:type" content="website">
@@ -25,12 +24,11 @@
 
     {{- else -}}
 
-    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
     <meta property="og:type" content="article" />
     <meta property="title" content="{{ .Title }} - {{ .Site.Title }}">
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
     <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
-    <meta property="description" content="{{ default .Summary .Description }}">
+    <meta name="description" content="{{ default .Summary .Description }}">
     <meta property="og:description" content="{{ default .Summary .Description }}">
     <meta property="twitter:description" content="{{ default .Summary .Description }}">
     <meta property="og:type" content="article">
