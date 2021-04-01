@@ -6,7 +6,34 @@
             {{ if .Data.Term }}
                 <p class="text-gray-900 font-bold text-3xl pb-2">标签: {{.Data.Term}}</p>
             {{ else }}
-                <p class="text-gray-900 font-bold text-3xl pb-2">文章归档</p>
+                
+                <p class="text-gray-900 font-bold text-3xl pb-2">那年今天</p>
+                {{ $review := false }}
+                {{ range where .Data.Pages "Type" "in" (slice "post" "posts") }}
+                    {{ if eq (.Date.Format "01-02") (now.Format "01-02")}}
+                        <div class="p-1 flex flex-row border-b border-dotted border-gray-400">
+                            <div class="text-gray-600 xl:w-1/10 pr-10 pt-3 hidden xl:inline-block" title="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "01-02"}}</div>
+                            <div class="xl:w-auto py-3">
+                                <p class="text-xl">
+                                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                </p>
+                                <p class="text-gray-600 text-sm  xl:hidden">{{ .Date.Format "2006-01-02 15:04:05 MST" }}</p>
+                                <p class="text-gray-600 text-sm">
+                                    {{ range .Params.tags }}
+                                        <a class="pr-2 hover:text-gray-800" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">#{{ . }}</a>
+                                    {{ end }}
+                                </p>
+                            </div>
+                        </div>
+                        {{ $review = true}}
+                    {{ end }}
+                   
+                {{ end }}
+                {{ if not $review }}
+                    <p class="text-gray-600 text-sm">无</p>
+                {{ end }}
+                <p class="text-gray-900 font-bold text-3xl pb-2 pt-4">文章归档</p>
+
             {{ end }}
 
             {{ range (where .Data.Pages "Type" "in" (slice "post" "posts")).GroupByDate "2006" -}}

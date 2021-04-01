@@ -12,6 +12,7 @@ Echo 是一个风格简洁的 Hugo 主题。
 - 自定义 css，自定义 js，自定义 head
 - 文章支持目录
 - 支持相关阅读
+- [那年今天](https://github.com/forecho/hugo-theme-echo/wiki)
 
 ## 谁在用 hugo-theme-echo
 
