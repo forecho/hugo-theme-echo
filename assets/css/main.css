@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .post-content {
     line-height: 1.625;
     color: #424242;

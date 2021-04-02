@@ -47,7 +47,7 @@
     <link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/x-png" />
     {{- end -}}
 
-    {{ $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+    {{ $styles := resources.Get "css/main.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
     {{ if .Site.IsServer }}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
     {{ else }}

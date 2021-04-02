@@ -17,7 +17,6 @@
     "autoprefixer": "^10.2.5",
     "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.1",
     "tailwindcss": "^2.0.4"
   }
 }
