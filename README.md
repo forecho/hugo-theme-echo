@@ -13,10 +13,11 @@ Echo 是一个风格简洁的 Hugo 主题。
 - 文章支持目录
 - 支持相关阅读
 - [那年今天](https://github.com/forecho/hugo-theme-echo/wiki)
+- 支持深度主题，可手动切换
 
 ## 谁在用 hugo-theme-echo
 
-- [forecho](https://blog.forecho.com)
+- [forecho](https://blog.forecho.com)：[GitHub 源码](https://github.com/forecho/hugo-blog)
 - Waiting to add more...
 
 ## 如何使用？
@@ -31,7 +32,6 @@ Echo 是一个风格简洁的 Hugo 主题。
 ### 快速安装 Hugo
 
 从 [Hugo Releases](https://github.com/gohugoio/hugo/releases) 上直接下载安装适合你的版本。
-
 
 
 ### 快速创建网站
@@ -51,7 +51,34 @@ hugo new site myBlog
 ```bash
 cd myBlog
 git submodule add https://github.com/forecho/hugo-theme-echo.git --depth=1 themes/echo
+cd themes/echo
+npm ci
 ```
+
+在根目录添加 `package.json` 文件，代码如下（一些个人信息请改成你自己的）：
+
+```json
+{
+    "name": "forecho-blog",
+    "version": "0.0.1",
+    "description": "that is forecho blog",
+    "repository": "https://github.com/forecho/hugo-blog",
+    "license": "MIT",
+    "devDependencies": {
+        "autoprefixer": "^10.2.5",
+        "postcss": "^8.2.9",
+        "postcss-cli": "^8.3.1",
+        "tailwindcss": "^2.0.4"
+    },
+    "browserslist": [
+        "last 1 version",
+        "> 1%",
+        "maintained node versions",
+        "not dead"
+    ]
+}
+```
+
 
 站点设置示例：
 
@@ -244,6 +271,74 @@ reward: false	 # 关闭打赏
 ## 关于热门文章
 
 如果标签里面含有 `popular` 就会自动出现再热门文章列表中，目前热门文章只会在侧边栏和404页面展示，热门文章列表最多展示5篇文章。
+
+## 配合 Github Actions 自动部署
+
+```yaml
+name: github pages
+
+name: "Close stale issues"
+on:
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.82.0'
+          extended: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm i
+      - run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          cname: blog.forecho.com
+          publish_dir: ./public
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+
+      - name: Slack Workflow Notification
+        uses: Gamesight/slack-workflow-status@master
+        with:
+          repo_token: ${{secrets.GITHUB_TOKEN}}
+          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+```
+
+## 那年今天
+
+效果如下：
+
+![](https://blog-1251237404.cos.ap-guangzhou.myqcloud.com/20210401gI6nFN.png)
+
+配合 GitHub Action 每天定时编译一起使用，效果最佳。
 
 ## 感谢
 
