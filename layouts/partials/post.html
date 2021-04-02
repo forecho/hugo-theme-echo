@@ -2,16 +2,16 @@
 <section class="w-full lg:w-3/4 xl:w-3/4">
 
     <!--Card-->
-    <div class="px-8 py-6 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+    <div class="px-8 py-6 mt-6 lg:mt-0 leading-normal rounded shadow bg-white dark:bg-gray-900">
 
         <!--Title-->
         {{ partial "posts/title.html" . }}
 
-        <div class="md:hidden">
+        <div class="md:hidden dark:text-gray-100">
             {{ partial "posts/toc.html" . }}
         </div> 
 
-        <div class="post-content">
+        <div class="post-content dark:text-white">
             {{ .Content }}
 
             <hr class="bg-gray-300 mt-8">
@@ -47,7 +47,7 @@
     <!--/Card-->
 
     <!--divider-->
-    <hr class="bg-gray-300 my-10">
+    <hr class="bg-gray-300 dark:bg-gray-300 my-10 ">
 
     {{ if in (slice "post" "posts") .Type }}
         {{ if .Site.Params.postAds }}
@@ -71,8 +71,8 @@
 
     {{ partial "posts/profile.html" . }}
 
-    <div class="flex flex-col justify-between sticky top-0 pt-12 pb-4 -mt-10 text-gray-600">
-        <div class="bg-white shadow rounded p-4 mt-5">
+    <div class="flex flex-col justify-between sticky top-0 pt-12 pb-4 -mt-10 text-gray-600 dark:text-gray-400">
+        <div class="bg-white shadow rounded p-4 mt-5 dark:bg-black">
             {{ partial "posts/toc.html" . }}
         </div>
     </div>

@@ -1,6 +1,6 @@
 {{ define "main" }}
     <section class="w-full lg:w-3/4 xl:w-3/4">
-        <div class="px-8 py-6 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+        <div class="px-8 py-6 mt-6 lg:mt-0 leading-normal rounded shadow bg-white dark:bg-black">
             
             {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "post" "posts")) }}
                 {{ range $index,$data := $paginator.Pages }}
@@ -8,23 +8,23 @@
                     <!--Title-->
                     {{ partial "posts/title.html" . }}
                     
-                    <div class="post-content">
+                    <div class="post-content dark:text-white">
                         {{ .Summary }}
                     </div>
-                    <p class="text-sm font-semibold pt-5 text-gray-700 ">
-                        <a href="{{ .Permalink }}" class="px-5 py-2 inline-block bg-gray-200 rounded  hover:bg-gray-300">阅读全文</a>
+                    <p class="text-sm font-semibold pt-5 text-gray-700 dark:text-gray-300">
+                        <a href="{{ .Permalink }}" class="px-5 py-2 inline-block bg-gray-200 dark:bg-gray-800 rounded hover:bg-gray-300 dark:hover:bg-gray-700">阅读全文</a>
                     </p>
                 </article>
 
                 <hr class="bg-gray-300 mt-10 mb-6">
             {{ end }}
             <p class="text-center">
-                <a  class="md:text-xl text-gray-700" href="{{ "/posts" | relLangURL }}{{ if $.Site.Params.uglyURLs }}.html{{ else }}/{{ end }}">↑ 文章归档 ↑</a>
+                <a  class="md:text-xl text-gray-700 dark:text-gray-300" href="{{ "/posts" | relLangURL }}{{ if $.Site.Params.uglyURLs }}.html{{ else }}/{{ end }}">↑ 文章归档 ↑</a>
             </p>
         </div>
     </section>
 
-    <div class="hidden md:block w-full lg:w-1/4 xl:w-1/4 px-6 text-gray-800 leading-normal">
+    <div class="hidden md:block w-full lg:w-1/4 xl:w-1/4 px-6 leading-normal">
 
         {{ partial "posts/profile.html" . }}
 

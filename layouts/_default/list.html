@@ -2,25 +2,25 @@
     <section class="w-full lg:w-3/4 xl:w-3/4">
 
     <!--Card-->
-        <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+        <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white dark:bg-black">
             {{ if .Data.Term }}
-                <p class="text-gray-900 font-bold text-3xl pb-2">标签: {{.Data.Term}}</p>
+                <p class="font-bold text-3xl pb-2">标签: {{.Data.Term}}</p>
             {{ else }}
                 
-                <p class="text-gray-900 font-bold text-3xl pb-2">那年今天</p>
+                <p class="font-bold text-3xl pb-2">那年今天</p>
                 {{ $review := false }}
                 {{ range where .Data.Pages "Type" "in" (slice "post" "posts") }}
                     {{ if eq (.Date.Format "01-02") (now.Format "01-02")}}
                         <div class="p-1 flex flex-row border-b border-dotted border-gray-400">
-                            <div class="text-gray-600 xl:w-1/10 pr-10 pt-3 hidden xl:inline-block" title="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "01-02"}}</div>
+                            <div class="text-gray-600 dark:text-gray-400 xl:w-1/10 pr-10 pt-3 hidden xl:inline-block" title="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "01-02"}}</div>
                             <div class="xl:w-auto py-3">
                                 <p class="text-xl">
                                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                                 </p>
-                                <p class="text-gray-600 text-sm  xl:hidden">{{ .Date.Format "2006-01-02 15:04:05 MST" }}</p>
-                                <p class="text-gray-600 text-sm">
+                                <p class="text-gray-600 dark:text-gray-400 text-sm  xl:hidden">{{ .Date.Format "2006-01-02 15:04:05 MST" }}</p>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">
                                     {{ range .Params.tags }}
-                                        <a class="pr-2 hover:text-gray-800" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">#{{ . }}</a>
+                                        <a class="pr-2 hover:text-gray-800 dark:hover:text-gray-200" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">#{{ . }}</a>
                                     {{ end }}
                                 </p>
                             </div>
@@ -32,34 +32,36 @@
                 {{ if not $review }}
                     <p class="text-gray-600 text-sm">无</p>
                 {{ end }}
-                <p class="text-gray-900 font-bold text-3xl pb-2 pt-4">文章归档</p>
+                <p class="font-bold text-3xl pb-2 pt-4">文章归档</p>
 
             {{ end }}
 
             {{ range (where .Data.Pages "Type" "in" (slice "post" "posts")).GroupByDate "2006" -}}
-            <p class="text-gray-900 font-bold text-2xl hidden xl:inline-block  pt-2">{{ .Key }}</p>
+            <div>
+                <p class="font-bold text-2xl hidden xl:inline-block bg-white dark:bg-black sticky pt-2" style="top:2em;">{{ .Key }}</p>
                 {{ range .Pages }}
                     <div class="p-1 flex flex-row border-b border-dotted border-gray-400">
-                        <div class="text-gray-600 xl:w-1/10 pr-10 pt-3 hidden xl:inline-block" title="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "01-02"}}</div>
+                        <div class="text-gray-600 dark:text-gray-400 xl:w-1/10 pr-10 pt-3 hidden xl:inline-block" title="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "01-02"}}</div>
                         <div class="xl:w-auto py-3">
                             <p class="text-xl">
                                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                             </p>
-                            <p class="text-gray-600 text-sm  xl:hidden">{{ .Date.Format "2006-01-02 15:04:05 MST" }}</p>
-                            <p class="text-gray-600 text-sm">
+                            <p class="text-gray-600 dark:text-gray-400 text-sm  xl:hidden">{{ .Date.Format "2006-01-02 15:04:05 MST" }}</p>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
                                 {{ range .Params.tags }}
-                                    <a class="pr-2 hover:text-gray-800" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">#{{ . }}</a>
+                                    <a class="pr-2 hover:text-gray-800 dark:hover:text-gray-200" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{ end }}">#{{ . }}</a>
                                 {{ end }}
                             </p>
                         </div>
                     </div>
 
                 {{ end }}
+            </div>
             {{ end }}
         </div>
     </section>
 
-    <div class="hidden md:block w-full lg:w-1/4 xl:w-1/4 px-6 text-gray-800 leading-normal">
+    <div class="hidden md:block w-full lg:w-1/4 xl:w-1/4 px-6 leading-normal">
 
         {{ partial "posts/profile.html" . }}
     </div>

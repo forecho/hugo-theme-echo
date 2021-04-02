@@ -1,14 +1,14 @@
 <!-- Pin to top right corner -->
-<footer class="bg-white border-t border-gray-400 shadow mt-10">	
+<footer class="bg-white dark:bg-black border-gray-400 shadow mt-10">	
     <div class="container  mx-auto flex py-8">
-        <div class="w-full text-center text-gray-600 ">
+        <div class="w-full text-center text-gray-600 dark:text-gray-400">
             <p>
-                &copy; {{ now.Format "2006" }} <a  class="text-gray-700" href="{{ .Site.BaseURL | absURL }}">{{ .Site.Title }} By {{ .Site.Author.name }} </a>
+                &copy; {{ now.Format "2006" }} <a  class="text-gray-700 dark:text-gray-300 font-semibold" href="{{ .Site.BaseURL | absURL }}">{{ .Site.Title }}</a> By {{ .Site.Author.name }} 
             </p>
             
             <p class="pt-1">
-                Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io/"  class="text-gray-700" target="_blank">Hugo</a> 
-                Theme based on <a href="https://github.com/forecho/hugo-theme-echo" class="text-gray-700" target="_blank">Echo</a>
+                Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io/"  class="text-gray-700 dark:text-gray-300 font-semibold" target="_blank">Hugo</a> 
+                Theme based on <a href="https://github.com/forecho/hugo-theme-echo" class="text-gray-700 dark:text-gray-300 font-semibold" target="_blank">Echo</a>
             </p>
 
             {{ if .Site.Params.busuanzi -}}

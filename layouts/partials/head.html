@@ -47,9 +47,14 @@
     <link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/x-png" />
     {{- end -}}
 
+    {{ $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+    {{ if .Site.IsServer }}
+      <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
+    {{ else }}
+      {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+      <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
+    {{ end }}
 
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ .Site.Params.staticPrefix }}{{ "/css/main.css" | relURL }}" />
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1607597_jhmihcvh0tm.css" />
     <link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
     
