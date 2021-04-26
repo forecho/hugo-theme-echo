@@ -3,164 +3,189 @@
 @tailwind utilities;
 
 .post-content {
-    line-height: 1.625;
-    color: #424242;
-  }
-  
-  .post-content h2 {
-    font-size: 140%;
-  }
-  
-  .post-content h3 {
-    font-size: 120%;
-  }
-  
-  .post-content h2,
-  .post-content h3 {
-    margin: 2rem 0 0.3rem;
-    font-weight: 700;
-  }
-  
-  .post-content h2:target,
-  .post-content h3:target {
-    padding-top: 5rem;
-  }
-  
-  .post-content ul,
-  .post-content ol {
-    list-style-type: initial;
-    padding: 0.5rem 0 1rem 1.5rem;
-  }
+  line-height: 1.625;
+  color: #424242;
+}
 
-  .post-content ul.list-none {
-    padding: 0 0 0 1rem;
-  }
-  
-  .post-content ul ul {
-    list-style-type: circle;
-    padding-left: 1.5rem;
-  }
-  
-  .post-content ul ul ul {
-    list-style-type: square;
-    margin-bottom: 0px;
-  }
-  
-  .post-content ul.list-none {
-    list-style-type: none;
-  }
-  
-  .post-content p code,
-  .post-content li code {
-    background-color: #f0f3f3;
-    padding: 0.1rem 0.4rem;
-    border-radius: 3px;
-    color: #805ad5;
-  }
-  
-  .post-content p {
-    margin: 0.5rem 0 1rem;
-  }
-  
-  .post-content img {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    margin: 1.5rem auto;
-  }
-  
-  .post-content a {
-    color: #0e7490;
-    text-decoration: none;
-    font-weight: 500;
-    box-shadow: inset 0 -0.125em 0 0 #fff, inset 0 -0.375em 0 0 rgb(165 243 252 / 40%);
-  }
-  
-  .post-content a:hover {
-    color: #0b4657;
-  }
+.post-content table {
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
 
-  .dark .post-content a:hover {
-    color: #0e7490;
-  }
+.post-content table th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+  background-color: #dedede;
+	border-color: #666666;
+}
 
-  .dark .post-content a {
-    color: #2fbfe7;
-    box-shadow: inset 0 -0.125em 0 0 #000, inset 0 -0.375em 0 0 rgb(165 243 252 / 40%);
-  }
-  
-  .post-content blockquote {
-    color: #9e9e9e;
-    padding-left: 1rem;
-    border-left-width: 4px;
-    border-color: #9e9e9e;
-    font-style: italic;
-  }
-  
-  .post-content pre,
-  .post-content .highlight {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    font-size: 0.875rem;
-  }
-  
-  ::selection {
-    background: #e9d8fd;
-    color: #202684;
-    /* WebKit/Blink Browsers */
-  }
-  
-  ::-moz-selection {
-    background: #e9d8fd;
-    color: #202684;
-    /* Gecko Browsers */
-  }
-  
-  a:focus {
-    outline: none;
-    background: #e9d8fd;
-  }
+.dark .post-content table th {
+	background-color: #374151;
+}
+.post-content table td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+}
 
-  .dark a:focus {
-    outline: none;
-    background: #000000;
-  }
-  
-  
-  /* 侧边导航 */
-  
-  #menu-content > ul {
-    padding: none;
-  }
-  
-  #TableOfContents > ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  #TableOfContents li {
-    padding-top: 0.5em;
-  }
-  
-  #TableOfContents > ul > li ul {
-    list-style-type: none;
-    padding-left: 1.5em;
-  }
-  
-  #TableOfContents a {
-    transition: all 0.2s ease !important;
-  }
-  #TableOfContents a:hover {
-    color: #1a202c !important;
-    transform: translateX(2px) !important;
-  }
+.post-content h2 {
+  font-size: 140%;
+}
 
-  .dark #TableOfContents a:hover {
-    color: #fdfdfd !important;
-    transform: translateX(2px) !important;
-  }
-  
-  .my-iconfont {
-    font-family: "iconfont" !important;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+.post-content h3 {
+  font-size: 120%;
+}
+
+.post-content h2,
+.post-content h3 {
+  margin: 2rem 0 0.3rem;
+  font-weight: 700;
+}
+
+.post-content h2:target,
+.post-content h3:target {
+  padding-top: 5rem;
+}
+
+.post-content ul,
+.post-content ol {
+  list-style-type: initial;
+  padding: 0.5rem 0 1rem 1.5rem;
+}
+
+.post-content ul.list-none {
+  padding: 0 0 0 1rem;
+}
+
+.post-content ul ul {
+  list-style-type: circle;
+  padding-left: 1.5rem;
+}
+
+.post-content ul ul ul {
+  list-style-type: square;
+  margin-bottom: 0px;
+}
+
+.post-content ul.list-none {
+  list-style-type: none;
+}
+
+.post-content p code,
+.post-content li code {
+  background-color: #f0f3f3;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  color: #805ad5;
+}
+
+.post-content p {
+  margin: 0.5rem 0 1rem;
+}
+
+.post-content img {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  margin: 1.5rem auto;
+}
+
+.post-content a {
+  color: #0e7490;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: inset 0 -0.125em 0 0 #fff,
+    inset 0 -0.375em 0 0 rgb(165 243 252 / 40%);
+}
+
+.post-content a:hover {
+  color: #0b4657;
+}
+
+.dark .post-content a:hover {
+  color: #0e7490;
+}
+
+.dark .post-content a {
+  color: #2fbfe7;
+  box-shadow: inset 0 -0.125em 0 0 #000,
+    inset 0 -0.375em 0 0 rgb(165 243 252 / 40%);
+}
+
+.post-content blockquote {
+  color: #9e9e9e;
+  padding-left: 1rem;
+  border-left-width: 4px;
+  border-color: #9e9e9e;
+  font-style: italic;
+}
+
+.post-content pre,
+.post-content .highlight {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+::selection {
+  background: #e9d8fd;
+  color: #202684;
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: #e9d8fd;
+  color: #202684;
+  /* Gecko Browsers */
+}
+
+a:focus {
+  outline: none;
+  background: #e9d8fd;
+}
+
+.dark a:focus {
+  outline: none;
+  background: #000000;
+}
+
+/* 侧边导航 */
+
+#menu-content > ul {
+  padding: none;
+}
+
+#TableOfContents > ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#TableOfContents li {
+  padding-top: 0.5em;
+}
+
+#TableOfContents > ul > li ul {
+  list-style-type: none;
+  padding-left: 1.5em;
+}
+
+#TableOfContents a {
+  transition: all 0.2s ease !important;
+}
+#TableOfContents a:hover {
+  color: #1a202c !important;
+  transform: translateX(2px) !important;
+}
+
+.dark #TableOfContents a:hover {
+  color: #fdfdfd !important;
+  transform: translateX(2px) !important;
+}
+
+.my-iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
