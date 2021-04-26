@@ -50,9 +50,9 @@ hugo new site myBlog
 
 ```bash
 cd myBlog
-git submodule add https://github.com/forecho/hugo-theme-echo.git --depth=1 themes/echo
+git submodule add https://github.com/forecho/hugo-theme-echo.git themes/echo
 cd themes/echo
-npm ci
+npm ci # 本地开发才需要
 ```
 
 在根目录添加 `package.json` 文件，代码如下（一些个人信息请改成你自己的）：
@@ -126,7 +126,7 @@ limit = 20
 name = "forecho"
 avatar = "https://avatars0.githubusercontent.com/u/1725326?s=460&v=4"
 bio = "7年开发经验，寻求技术 Leader 工作机会。Wechat: ipzone"
-homepage = "https://forecho.io/"
+homepage = "https://forecho.com/"
 
 [params]
 favicon = "https://avatars0.githubusercontent.com/u/1725326?s=460&v=4"
