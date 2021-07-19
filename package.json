@@ -15,7 +15,7 @@
   "homepage": "https://github.com/forecho/hugo-theme-echo#readme",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.10",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.4"
   }
