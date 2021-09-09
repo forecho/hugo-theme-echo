@@ -88,7 +88,7 @@ languageCode = "en-us"
 title = "Forecho's Blog"
 theme = "echo"
 DefaultContentLanguage = "cn"
-# 自动检测是否包含中文/日文/韩文，该参数会影响摘要和字数统计功能，建议设置为true
+# 自动检测是否包含中文/日文/韩文，该参数会影响摘要和字数统计功能，建议设置为 true
 hasCJKLanguage = true
 # 设置页面生成形式，将默认的网站路径/修改成.html
 uglyURLs = true
@@ -101,8 +101,8 @@ disqusShortname = "forecho-blog" # disqus account name
 livereUID = "" # LiveRe UID                  # 来必力
 
 [markup.highlight]
-codeFences = true # 高亮markdown的代码块
-guessSyntax = true # 高亮markdown中没有标注语言的代码块
+codeFences = true # 高亮 markdown 的代码块
+guessSyntax = true # 高亮 markdown 中没有标注语言的代码块
 hl_Lines = ""
 lineNoStart = 1
 lineNos = true
@@ -125,7 +125,7 @@ limit = 20
 [author]
 name = "forecho"
 avatar = "https://avatars0.githubusercontent.com/u/1725326?s=460&v=4"
-bio = "7年开发经验，寻求技术 Leader 工作机会。Wechat: ipzone"
+bio = "7 年开发经验，寻求技术 Leader 工作机会。Wechat: ipzone"
 homepage = "https://forecho.com/"
 
 [params]
@@ -151,7 +151,7 @@ notFoundAds = ''
 
 # 开启版权声明，协议名字和链接都可以换
 [params.cc]
-name = "署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)"
+name = "署名 - 非商业性使用 4.0 国际 (CC BY-NC 4.0)"
 link = "https://creativecommons.org/licenses/by-nc/4.0/deed.zh"
 
 # 文章打赏
@@ -171,6 +171,8 @@ clientSecret = "" # Your client secret
 [params.utterances] # https://utteranc.es/
 owner = "" # Your GitHub ID
 repo = "" # The repo to store comments
+theme = "github-light"
+issueterm = "pathname"
 
 [params.gitalk] # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
 owner = "" # Your GitHub ID
@@ -183,8 +185,8 @@ clientSecret = "" # Your client secret
 # more info please open https://valine.js.org
 [params.valine]
 enable = false
-appId = '你的appId'
-appKey = '你的appKey'
+appId = '你的 appId'
+appKey = '你的 appKey'
 notify = false # mail notifier , https://github.com/xCss/Valine/wiki
 verify = false # Verification code
 avatar = 'mm'
@@ -261,7 +263,7 @@ categories: ["index"]              # 分类
 author: "forecho"                  # 作者
 
 # 用户自定义
-# 你可以选择 关闭(false) 或者 打开(true) 以下选项
+# 你可以选择 关闭 (false) 或者 打开 (true) 以下选项
 comment: false   # 关闭评论
 toc: false       # 关闭文章目录
 reward: false	 # 关闭打赏
@@ -270,7 +272,7 @@ reward: false	 # 关闭打赏
 
 ## 关于热门文章
 
-如果标签里面含有 `popular` 就会自动出现再热门文章列表中，目前热门文章只会在侧边栏和404页面展示，热门文章列表最多展示5篇文章。
+如果标签里面含有 `popular` 就会自动出现再热门文章列表中，目前热门文章只会在侧边栏和 404 页面展示，热门文章列表最多展示 5 篇文章。
 
 ## 配合 Github Actions 自动部署
 
