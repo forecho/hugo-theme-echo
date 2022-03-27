@@ -193,6 +193,16 @@ avatar = 'mm'
 placeholder = '说点什么吧...'
 visitor = false
 
+[params.giscus] # https://giscus.app
+repo = "forecho/hugo-blog" # Repo where the comments will live
+repo_id = "<data-repo-id>" # Repo where the comments will live
+category = "Announcements" # Repo where the comments will live
+category_id = "<data-category-id>" # Repo where the comments will live
+mapping = "pathname" # How Utterances will match comment to page
+label = "comment" # Label applied to issue by utteranc.es bot
+theme = "light" # What theme to use
+reactions_enabled = 0
+
 ############ 评论系统  end ##############
 ## 社交链接
 [social]
