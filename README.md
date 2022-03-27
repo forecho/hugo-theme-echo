@@ -200,7 +200,8 @@ category = "Announcements" # Repo where the comments will live
 category_id = "<data-category-id>" # Repo where the comments will live
 mapping = "pathname" # How Utterances will match comment to page
 theme = "light" # What theme to use
-reactions_enabled = 0
+reactions_enabled = 1 # Enable reactions
+lang = "zh-CN" # Language
 
 ############ 评论系统  end ##############
 ## 社交链接
