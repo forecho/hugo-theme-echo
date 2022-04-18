@@ -8,7 +8,7 @@
         <!-- Item -->
         {{ with $qrCode.wechat -}}
         <div class="w-full px-2 my-2">
-            <div class="bg-white dark:bg-black">
+            <div class="bg-white dark:bg-gray-800">
                 <img class="h-48 shadow object-cover w-auto mx-auto" loading="lazy" src="{{ . }}" alt="微信打赏">
                 <div class="text-center text-gray-500">微信打赏</div>
             </div>
@@ -17,7 +17,7 @@
 
         {{ with $qrCode.alipay -}}
         <div class="w-full px-2 my-2">
-            <div class="bg-white dark:bg-black">
+            <div class="bg-white dark:bg-gray-800">
                 <img class="h-48 shadow object-cover w-auto mx-auto" loading="lazy" src="{{ . }}" alt="支付宝打赏">
                 <div class="text-center text-gray-500">支付宝打赏</div>
             </div>

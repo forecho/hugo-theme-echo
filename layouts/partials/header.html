@@ -1,10 +1,10 @@
-<nav id="header" class="bg-white dark:bg-black fixed w-full z-10 top-0 shadow">
+<nav id="header" class="bg-white dark:bg-gray-800 fixed w-full z-10 top-0 shadow">
 
   <div id="progress" class="h-1 z-20 top-0" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
 
   <div class="w-full container mx-auto flex flex-wrap items-center justify-between my-1">
       <div class="pl-4">
-          <a class="text-base no-underline hover:no-underline font-bold text-xl"  href="/">
+          <a class="text-base no-underline hover:no-underline font-bold"  href="/">
               {{ $.Site.Title }}
           </a>
       </div>
@@ -15,7 +15,7 @@
           </button>
       </div>
 
-      <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-100 dark:bg-black md:bg-transparent z-20" id="nav-content">
+      <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-gray-100 dark:bg-gray-800 md:bg-transparent z-20" id="nav-content">
           <ul class="list-reset lg:flex justify-end flex-1 items-center">
                 {{- range $item := $.Site.Params.NavItems }}
                     <li class="mr-3">
