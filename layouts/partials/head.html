@@ -9,7 +9,7 @@
     {{ if .Site.Author.name }}<meta name="author" content="{{ .Site.Author.name }}" />{{end}}
     {{ if .Site.Params.keywords }}<meta name="keywords" content="{{ .Site.Params.keywords }}" />{{ end }}
     <meta name="og:site_name" content="{{ .Site.Title }}" />
-    <link rel="canonical" href="{ .Permalink }}" />
+    <link rel="canonical" href="{{ .Permalink }}" />
 
     {{- if .IsHome -}}
 
