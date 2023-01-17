@@ -129,6 +129,7 @@ bio = "7 年开发经验，寻求技术 Leader 工作机会。Wechat: ipzone"
 homepage = "https://forecho.com/"
 
 [params]
+htmlClass = "dark" # 可选，默认是空，为 light
 favicon = "https://avatars0.githubusercontent.com/u/1725326?s=460&v=4"
 keywords = "Hugo, theme, echo"
 description = "Hugo theme echo example site."
@@ -232,7 +233,7 @@ douban = "ipzone"
 rss = "/atom.xml"
 ```
 
-启动 hugo server ：
+启动 hugo server：
 
 ```bash
 hugo server -D
@@ -258,7 +259,7 @@ hugo server -D
 
 ## 单篇文章的设置
 
-**Front Matter** : Hugo 允许你使用 yaml， toml 或者 json 语法在你每一篇文章的开头进行设置。
+**Front Matter** : Hugo 允许你使用 yaml，toml 或者 json 语法在你每一篇文章的开头进行设置。
 
 **YAML 示例：**
 
