@@ -16,7 +16,7 @@
       </div>
 
       <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-gray-100 dark:bg-gray-800 md:bg-transparent z-20" id="nav-content">
-          <ul class="list-reset lg:flex justify-end flex-1 items-center">
+          <ul class="list-none lg:flex justify-end flex-1 items-center">
                 {{- range $item := $.Site.Params.NavItems }}
                     <li class="mr-3">
                     <a href="{{ index $item 1 }}" class="inline-block py-2 px-2 text-gray-700 dark:text-gray-300 font-bold no-underline">{{ index $item 0 }}</a>

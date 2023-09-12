@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  ul, ol {
+    list-style: revert;
+  }
+}
+
 .post-content {
   line-height: 1.625;
   color: #424242;
@@ -52,7 +58,6 @@
 
 .post-content ul,
 .post-content ol {
-  list-style-type: initial;
   padding: 0.5rem 0 1rem 1.5rem;
 }
 
