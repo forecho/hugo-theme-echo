@@ -63,9 +63,9 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1607597_jhmihcvh0tm.css" />
     <link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
     
-    <!-- busuanzi -->
+    <!-- vercount -->
     {{- if .Site.Params.busuanzi -}}
-      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <script defer src="https://cn.vercount.one/js"></script>
     {{- end -}}
 
     {{ .Site.Params.extraHead | safeHTML }}
