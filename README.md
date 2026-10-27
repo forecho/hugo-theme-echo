@@ -228,7 +228,7 @@ reddit = "forecho"
 pinterest = "forecho"
 weibo = "forecho"
 facebook = "forecho"
-twitter = "caizhenghai"
+twitter = "forecho"
 douban = "ipzone"
 rss = "/atom.xml"
 ```
